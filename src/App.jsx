@@ -1,10 +1,37 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Navbar from './components/Navbar';
 import hourglass from './assets/hourglass.png';
 import image01 from './assets/image01.png';
 import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+import FeatureCard from './components/FeatureCard';
+import { CiClock2 } from "react-icons/ci";
+import { MdOutlineFreeBreakfast } from "react-icons/md";
+import { SiSimpleanalytics } from "react-icons/si";
 
 const App = () => {
+
+  const ref = useRef(null);
+
+  const featureDetails = [
+    {
+      "icon": <CiClock2 />,
+      "title": "Structured Pomodoro Timer",
+      "description": "Maintain deep focus with a customizable Pomodoro timer that structures your work into manageable intervals, helping you avoid burnout and improve efficiency."
+    },
+
+    {
+      "icon": <MdOutlineFreeBreakfast />,
+      "title": "Smart Break Reminders",
+      "description": "Stay energized and prevent fatigue with intelligent break reminders that adapt to your session patterns, ensuring timely rest without breaking your flow."
+    },
+
+    {
+      "icon": <SiSimpleanalytics />,
+      "title": "Focus Analytics",
+      "description": "Visualize your productivity with detailed session analytics that track your focus trends, enabling smarter time management and continuous improvement."
+    }
+  ]
+
   return (
     <div className="wrapper select-none min-h-screen w-full text-white overflow-x-hidden">
       <Navbar />
@@ -45,7 +72,7 @@ const App = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="min-h-screen w-full mt-10 px-6 py-16">
+      <section id="about" className="min-h-screen w-full mt-10 px-6 py-14">
         <h4 className="text-center text-sm opacity-50 tracking-wide">About</h4>
         <h1 className="text-center text-3xl sm:text-4xl mt-2">
           What is{' '}
@@ -68,7 +95,7 @@ const App = () => {
                 Wins.
               </span>
             </h2>
-            <p className="text-center text-base sm:text-lg">
+            <p className="text-center text-sm tracking-wide sm:text-lg">
               The Pomodoro Technique is a mindful productivity method where you work in 25-minute sprints, followed by short rest breaks.
               It’s not just a timer — it’s a rhythm. A way to stay focused, fight burnout, and actually enjoy the work you do.
               With every tick, you're not rushing — you're flowing.
@@ -80,7 +107,7 @@ const App = () => {
                 Works?
               </span>
             </h2>
-            <p className="text-center text-base sm:text-lg">
+            <p className="text-center text-sm tracking-wide sm:text-lg">
               🧠 Sharpen your focus <br />
               🕰️ Manage your time wisely <br />
               🔄 Build consistency <br />
@@ -100,8 +127,13 @@ const App = () => {
             Toolkit
           </span>
         </h1>
-        
-        
+
+        <div className="feature-container my-9 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {featureDetails.map((detail, idx) => (
+            <FeatureCard data={detail} reference={ref} />
+          ))}
+        </div>
+
 
       </section>
     </div>
