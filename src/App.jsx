@@ -1,0 +1,111 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import hourglass from './assets/hourglass.png';
+import image01 from './assets/image01.png';
+import { RiDoubleQuotesL, RiDoubleQuotesR } from "react-icons/ri";
+
+const App = () => {
+  return (
+    <div className="wrapper select-none min-h-screen w-full text-white overflow-x-hidden">
+      <Navbar />
+
+      {/* Hero Section */}
+      <section id="home" className="flex flex-col items-center justify-center gap-10 px-6 pt-16 pb-8 text-center relative">
+
+        {/* Hourglass Image */}
+
+        <div className="absolute -top-14 opacity-30 left-1/2 -translate-x-1/2 lg:left-1/3 lg:-top-32 w-72 md:w-64 lg:w-100 rotate-[20deg] z-10 md:opacity-90">
+          <img src={hourglass} alt="hourglass" className="w-full h-auto" />
+        </div>
+
+        {/* Headings */}
+        <div>
+          <h1 className="text-6xl sm:text-7xl md:text-7xl lg:text-9xl font-anton bg-gradient-to-r from-sky-400 via-indigo-600 to-indigo-950 bg-clip-text text-transparent leading-tight">
+            Stay Focused,
+          </h1>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-anton bg-gradient-to-r from-gray-300 to-gray-400 bg-clip-text text-transparent mt-4">
+            Work Smarter.
+          </h1>
+        </div>
+
+        {/* Quote */}
+        <div className="max-w-xl md:mt-3 px-4 md:px-0 relative">
+          <RiDoubleQuotesL className="text-sky-500 hidden md:visible text-md md:text-xl absolute -left-4 -top-4" />
+          <p className="text-sm md:text-md bg-gradient-to-r from-sky-400 via-indigo-600 to-sky-700 bg-clip-text text-transparent">
+            Manage your time with the Pomodoro technique. Stay on task, beat distractions, and get more done — one timer at a time.
+          </p>
+          <RiDoubleQuotesR className="text-sky-500 hidden md:visible text-md md:text-xl absolute -right-4 -bottom-4" />
+        </div>
+
+        {/* CTA Button */}
+        <button className="rounded-full px-5 py-2 md:px-7 md:py-3 bg-gradient-to-r from-sky-400 via-indigo-600 to-indigo-950 text-white text-md hover:scale-105 transition-transform duration-200">
+          Get Started
+        </button>
+
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="min-h-screen w-full mt-10 px-6 py-16">
+        <h4 className="text-center text-sm opacity-50 tracking-wide">About</h4>
+        <h1 className="text-center text-3xl sm:text-4xl mt-2">
+          What is{' '}
+          <span className="font-anton bg-gradient-to-r from-sky-400 via-indigo-600 to-sky-700 bg-clip-text text-transparent">
+            Pomodoro?
+          </span>
+        </h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
+          {/* Image */}
+          <div className="flex justify-center">
+            <img src={image01} alt="Pomodoro Illustration" className="w-3/4 sm:w-2/3 md:w-[70%] contrast-125" />
+          </div>
+
+          {/* Text */}
+          <div className='lg:pr-12'>
+            <h2 className="text-2xl sm:text-3xl text-center mb-5 font-anton">
+              Small Sprints. Big{' '}
+              <span className="bg-gradient-to-r from-sky-400 via-indigo-600 to-sky-700 bg-clip-text text-transparent">
+                Wins.
+              </span>
+            </h2>
+            <p className="text-center text-base sm:text-lg">
+              The Pomodoro Technique is a mindful productivity method where you work in 25-minute sprints, followed by short rest breaks.
+              It’s not just a timer — it’s a rhythm. A way to stay focused, fight burnout, and actually enjoy the work you do.
+              With every tick, you're not rushing — you're flowing.
+            </p>
+
+            <h2 className="text-2xl sm:text-3xl text-center mt-14 mb-5 font-anton">
+              How Pomodoro{' '}
+              <span className="bg-gradient-to-r from-sky-400 via-indigo-600 to-sky-700 bg-clip-text text-transparent">
+                Works?
+              </span>
+            </h2>
+            <p className="text-center text-base sm:text-lg">
+              🧠 Sharpen your focus <br />
+              🕰️ Manage your time wisely <br />
+              🔄 Build consistency <br />
+              🌿 Avoid burnout <br />
+              ✅ Get more done, stress-free
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section id="features" className="min-h-screen w-full mt-10 px-6 py-16 bg-gradient-to-r from-[#01011e] via-[#010117] to-[#000009]">
+        <h4 className="text-center text-sm opacity-50 tracking-wide">Features</h4>
+        <h1 className="text-center text-3xl sm:text-4xl mt-2">
+          Your Focus{' '}
+          <span className="font-anton bg-gradient-to-r from-sky-400 via-indigo-600 to-sky-700 bg-clip-text text-transparent">
+            Toolkit
+          </span>
+        </h1>
+        
+        
+
+      </section>
+    </div>
+  );
+};
+
+export default App;

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inknut+Antiqua:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto+Slab:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-anton : "Anton", sans-serif;
+}
+
+.wrapper {
+    background: hsla(0, 0%, 0%, 1);
+
+    background: linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(238, 95%, 7%, 1) 55%, hsla(0, 0%, 1%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(238, 95%, 7%, 1) 55%, hsla(0, 0%, 1%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(0, 0%, 0%, 1) 0%, hsla(238, 95%, 7%, 1) 55%, hsla(0, 0%, 1%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#010225", GradientType=1 );
+}
