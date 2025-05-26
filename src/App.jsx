@@ -7,6 +7,7 @@ import FeatureCard from './components/FeatureCard';
 import { CiClock2 } from "react-icons/ci";
 import { MdOutlineFreeBreakfast } from "react-icons/md";
 import { SiSimpleanalytics } from "react-icons/si";
+// import ScrollVideo from './components/ScrollVideo';
 
 const App = () => {
 
@@ -136,6 +137,8 @@ const App = () => {
 
 
       </section>
+
+      {/* Video Section */}
     </div>
   );
 };
