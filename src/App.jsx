@@ -7,9 +7,13 @@ import FeatureCard from './components/FeatureCard';
 import { CiClock2 } from "react-icons/ci";
 import { MdOutlineFreeBreakfast } from "react-icons/md";
 import { SiSimpleanalytics } from "react-icons/si";
+import Faq from './components/Faq';
+import LocomotiveScroll from 'locomotive-scroll';
 // import ScrollVideo from './components/ScrollVideo';
 
 const App = () => {
+
+  const locomotiveScroll = new LocomotiveScroll();
 
   const ref = useRef(null);
 
@@ -131,14 +135,18 @@ const App = () => {
 
         <div className="feature-container my-9 grid grid-cols-1 gap-6 md:grid-cols-3">
           {featureDetails.map((detail, idx) => (
-            <FeatureCard data={detail} reference={ref} />
+            <FeatureCard key={idx} data={detail} reference={ref} />
           ))}
         </div>
 
 
       </section>
 
-      {/* Video Section */}
+      {/* Frequently Asked Questions */}
+      <Faq />
+
+
+
     </div>
   );
 };

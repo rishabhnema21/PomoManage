@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import myVideo from '../assets/myVideo.mp4'
@@ -8,12 +8,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ScrollVideo = () => {
 
-      const sectionRef = useRef(null);
+  const sectionRef = useRef(null);
   const videoWrapperRef = useRef(null);
   const videoRef = useRef(null);
   const [isPinned, setIsPinned] = useState(true);
 
-    useEffect(() => {
+  useEffect(() => {
     const section = sectionRef.current;
     const video = videoRef.current;
 
@@ -50,22 +50,12 @@ const ScrollVideo = () => {
   }, []);
 
   return (
-      <div ref={sectionRef} className="page1">
-        <div
-          ref={videoWrapperRef}
-          className={`video-wrapper ${isPinned ? 'fixed' : 'static'}`}
-        >
-          <video
-            ref={videoRef}
-            muted
-            playsInline
-            preload="auto"
-            className="video"
-            src={myVideo}
-          />
-        </div>
-      </div>
-  )
-}
+    
+    <section>
+      
+    </section>
+    
+  );
+};
 
 export default ScrollVideo

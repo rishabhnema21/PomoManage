@@ -17,8 +17,8 @@ const Navbar = () => {
         <header className='sticky top-0 left-0 md:backdrop-blur-xl z-99 md:z-99 text-white py-5 px-8'>
             <nav className='flex justify-between items-center'>
                 <div id="logo" className='flex items-center'>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-blue-400">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-blue-400">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
                             d="M6 3h12M6 21h12M8 3v2.586a2 2 0 0 0 .586 1.414L12 10l3.414-3.414A2 2 0 0 0 16 5.586V3M8 21v-2.586a2 2 0 0 1 .586-1.414L12 14l3.414 3.414A2 2 0 0 1 16 18.414V21" />
                     </svg>
                     <a className='text-xl z-40 font-bold tracking-tighter' href="#home">
