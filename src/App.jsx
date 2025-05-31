@@ -9,7 +9,9 @@ import { MdOutlineFreeBreakfast } from "react-icons/md";
 import { SiSimpleanalytics } from "react-icons/si";
 import Faq from "./components/Faq";
 import LocomotiveScroll from "locomotive-scroll";
-import Contact from "./components/Contact"
+import Contact from "./components/Contact";
+import Quote from "./components/Quote";
+
 // import ScrollVideo from './components/ScrollVideo';
 
 const App = () => {
@@ -57,7 +59,7 @@ const App = () => {
 
         {/* Headings */}
         <div>
-          <h1 className="text-6xl sm:text-7xl md:text-7xl lg:text-9xl font-anton bg-gradient-to-r from-sky-400 via-indigo-600 to-indigo-950 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-7xl sm:text-7xl md:text-7xl lg:text-9xl font-anton bg-gradient-to-r from-sky-400 via-indigo-600 to-indigo-950 bg-clip-text text-transparent leading-tight">
             Stay Focused,
           </h1>
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-anton bg-gradient-to-r from-gray-300 to-gray-400 bg-clip-text text-transparent mt-4">
@@ -155,11 +157,19 @@ const App = () => {
         </div>
       </section>
 
+      <Quote />
+
       {/* Frequently Asked Questions */}
       <Faq />
 
       {/* Contact Section */}
       <Contact />
+
+      <footer>
+        
+      </footer>
+
+      
     </div>
   );
 };

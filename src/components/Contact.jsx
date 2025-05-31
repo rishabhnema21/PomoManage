@@ -7,9 +7,9 @@ const Contact = () => {
           Contact
         </h4>
         <h1 className="text-center text-3xl sm:text-4xl mt-2">
-          Still Confused? <br />
+          Your Thoughts Matter <br />
           <span className="font-anton bg-gradient-to-r from-sky-400 via-indigo-600 to-sky-700 bg-clip-text text-transparent">
-            Drop your Question here
+             Talk to Us
           </span>
         </h1>
 
