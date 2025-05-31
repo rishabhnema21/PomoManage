@@ -45,7 +45,7 @@ const Faq = () => {
   };
 
   return (
-    <section className="faq-section w-full mt-10 px-6 py-16">
+    <section className="faq-section w-full px-6 pt-5 pb-8">
       <h4 className="text-center text-sm opacity-50 tracking-wide">FAQ</h4>
       <h1 className="text-center text-3xl sm:text-4xl mt-2">
         Got{" "}
@@ -54,7 +54,7 @@ const Faq = () => {
         </span>
       </h1>
 
-      <div className="faq-container w-full flex justify-center items-center my-8 py-5">
+      <div className="faq-container w-full flex justify-center items-center mt-8 py-2">
         <div className="faq-box w-full md:w-[50%] flex flex-col justify-center">
           {faqDetail.map((faq, idx) => (
             <FaqItem
