@@ -1,7 +1,6 @@
 import React from "react";
 import Timer from "./components/Timer";
-
-
+import Todolist from "./components/Todolist";
 
 const PomoTimer = () => {
   return (
@@ -32,9 +31,9 @@ const PomoTimer = () => {
           </div>
         </div>
 
-        <div className="w-full px-6 py-4 flex flex-row-reverse">
+        <div className="w-full px-6 py-12 flex flex-col md:flex-row-reverse">
             <Timer />
-            <div className="todo w-1/2"></div>
+            <Todolist />
         </div>
 
       </div>

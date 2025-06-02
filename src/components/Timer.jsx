@@ -113,31 +113,31 @@ const Timer = () => {
   const seconds = String(timeLeft % 60).padStart(2, "0");
 
   return (
-    <div className="timer-container py-8 w-1/2 flex-col justify-center items-center text-center ">
-      <button className="border-[1px] border-sky-400 px-5 py-1 rounded-2xl">
+    <div className="timer-container py-8 w-full md:w-1/2 flex-col justify-center items-center text-center ">
+      <button className="border-[1px] border-sky-400 text-sm sm:text-md md:text-base px-5 py-1 rounded-2xl">
         {getLabel()}
       </button>
       <div className="timer-display">
-        <h1 className="text-[10rem] tracking-wide leading-none font-sans">
+        <h1 className="text-[5rem] sm:text-8xl md:text-9xl lg:text-[10rem] tracking-wide leading-none font-sans">
           {minutes}:{seconds}
         </h1>
       </div>
-      <div className="ctrl-buttons mt-8 flex justify-center items-center gap-4">
+      <div className="ctrl-buttons mt-5 md:mt-8 flex justify-center items-center gap-2 md:gap-4">
         <button
           onClick={resetTimer}
-          className="px-4 py-4 cursor-pointer bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200 rounded-2xl border-none"
+          className="px-3 py-3 md:px-4 md:py-4 cursor-pointer bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200 rounded-2xl border-none"
         >
           <RiResetLeftLine />
         </button>
         <button
           onClick={toggleTimer}
-          className="px-6 py-6 cursor-pointer bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200 rounded-2xl border-none"
+          className="px-4 py-4 md:px-6 md:py-6 cursor-pointer bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200 rounded-2xl border-none"
         >
           {isRunning ? <FaPause /> : <FaPlay />}
         </button>
         <button
           onClick={handleSkip}
-          className="px-4 py-4 cursor-pointer bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200 rounded-2xl border-none"
+          className="px-3 py-3 md:px-4 md:py-4 cursor-pointer bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200 rounded-2xl border-none"
         >
           <IoPlayForwardSharp />
         </button>

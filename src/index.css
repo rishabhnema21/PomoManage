@@ -16,3 +16,19 @@
 
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#010225", GradientType=1 );
 }
+
+/* src/index.css or main.css */
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #01147d;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
