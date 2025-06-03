@@ -83,7 +83,7 @@ const ContactForm = () => {
               </label>
               <textarea placeholder="Write Your Message Here" className="border-[1px] outline-none p-1 w-[100%] h-[10rem] border-slate-600" name="message" id="message"></textarea>
 
-              <button className="mt-5 outline-none px-6 py-2 md:px-7 md:py-3 text-md rounded-full bg-gradient-to-r from-sky-400 via-indigo-600 to-indigo-950 border-none">SUBMIT</button>
+              <button className="mt-5 outline-none px-6 py-2 md:px-5 md:py-2 text-md rounded-full bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200 border-none">SUBMIT</button>
 
             </form>
           </div>

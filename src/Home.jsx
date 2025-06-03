@@ -34,9 +34,9 @@ const Home = () => {
 
     {
       icon: <SiSimpleanalytics />,
-      title: "Focus Analytics",
+      title: "Persistent Productivity",
       description:
-        "Visualize your productivity with detailed session analytics that track your focus trends, enabling smarter time management and continuous improvement.",
+        "Your tasks and focus sessions are safely stored in your browser using local storage, so you can return anytime without losing progress — no login needed.",
     },
   ];
 
@@ -76,7 +76,7 @@ const Home = () => {
         </div>
 
         {/* CTA Button */}
-        <button onClick={() => navigate("/pomoTimer")} className="rounded-full px-5 py-2 md:px-7 md:py-3 bg-gradient-to-r from-sky-400 via-indigo-600 to-indigo-950 text-white text-md hover:scale-105 transition-transform duration-200">
+        <button onClick={() => navigate("/pomoTimer")} className="rounded-full px-5 py-2 md:px-5 md:py-2 bg-gradient-to-br from-sky-950 to-green-800 hover:to-sky-700 transition ease-in-out duration-200">
           Get Started
         </button>
       </section>

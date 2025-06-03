@@ -28,6 +28,26 @@ const Timer = () => {
   const [focusCount, setFocusCount] = useState(0);
   const [phase, setPhase] = useState("focus");
 
+  // localstorage load
+  useEffect(() => {
+    const savedTimeLeft = localStorage.getItem("pomo-timeleft");
+    const savedfocusCount = localStorage.getItem("pomo-focusCount");
+    const savedPhase = localStorage.getItem("pomo-phase");
+    const savedIsRunning = localStorage.getItem("pomo-isRunning");
+
+    if (savedTimeLeft != null) setTimeLeft(Number(savedTimeLeft));
+    if (savedfocusCount != null) setFocusCount(Number(savedfocusCount));
+    if (savedPhase != null) setPhase(savedPhase);
+    if (savedIsRunning != null) setIsRunning(savedIsRunning === "true");
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("pomo-timeleft", timeLeft);
+    localStorage.setItem("pomo-focusCount", focusCount);
+    localStorage.setItem("pomo-phase", phase);
+    localStorage.setItem("pomo-isRunning", isRunning);
+  }, [timeLeft, isRunning, focusCount, phase]);
+
   useEffect(() => {
     if (!isRunning) {
       clockSound.pause();
@@ -91,6 +111,11 @@ const Timer = () => {
     setFocusCount(0);
     setPhase("focus");
     setTimeLeft(durations.focus);
+
+    localStorage.removeItem("pomo-timeleft");
+    localStorage.removeItem("pomo-isRunning");
+    localStorage.removeItem("pomo-focusCount");
+    localStorage.removeItem("pomo-phase");
   };
 
   const handleSkip = () => {

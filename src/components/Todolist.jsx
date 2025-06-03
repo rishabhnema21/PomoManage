@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoAdd } from "react-icons/io5";
 import { TiTick } from "react-icons/ti";
 import { RxCross2 } from "react-icons/rx";
@@ -9,6 +9,31 @@ const Todolist = () => {
     let [todos, setTodos] = useState([]);
 
 let [newTodo, setNewTodo] = useState("");
+
+
+const [hasMounted, setHasMounted] = useState(false);
+
+useEffect(() => {
+  const savedTodos = localStorage.getItem("todos");
+  if (savedTodos) {
+    try {
+      setTodos(JSON.parse(savedTodos));
+    } catch (error) {
+      console.error("Error parsing todos from localStorage", error);
+      localStorage.removeItem("todos");
+    }
+  }
+}, []);
+
+useEffect(() => {
+  if (hasMounted) {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  } else {
+    setHasMounted(true);
+  }
+}, [todos]);
+
+
 
 const addNewTask = () => {
     if(newTodo.trim() === "") return;
