@@ -3,7 +3,7 @@ import time from "../assets/time.svg";
 
 const Quote = () => {
   return (
-          <section className="w-full flex-col gap-5 md:gap-0 md:flex-row flex justify-evenly items-center px-6 py-16 bg-gradient-to-br from-[#030009] via-[#002761] to-[#000d18]">
+          <section className="w-full flex-col gap-5 md:gap-0 md:flex-row flex justify-evenly items-center px-6 py-16 bg-gradient-to-br from-[#060112] via-[rgb(2,41,71)] to-[#00080f]">
         <div className="w-full md:w-1/2 ">
           <blockquote className="text-5xl md:text-7xl relative font-anton tracking-wide italic text-gray-300">
             <svg
