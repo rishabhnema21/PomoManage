@@ -17,7 +17,7 @@ const Faq = () => {
     {
       question: "Can I customize the timer durations?",
       answer:
-        "Yes! You can adjust the length of work sessions, short breaks, and long breaks according to your preference.",
+        "Yes! You can adjust the length of work sessions (Focus Durations) as of now according to your preferences of 25 min, 45 min and 55 min.",
     },
     {
       question: "Do I need to sign up to use the timer?",
@@ -27,13 +27,13 @@ const Faq = () => {
     {
       question: "Will my progress be saved?",
       answer:
-        "Basic progress is stored locally in your browser using local storage. It will reset if you clear your browser data or use a different device.",
+        "Basic progress of your Todo list is stored locally in your browser using local storage. It will reset if you clear your browser data or use a different device.",
     },
 
     {
       question: "How is this different from a regular timer?",
       answer:
-        "This timer is tailored specifically for the Pomodoro Technique. It includes automatic break management, session counting, and a distraction-free interface designed to enhance focus.",
+        "This timer is tailored specifically for the Pomodoro Technique. It includes automatic break management,  and a distraction-free interface designed to enhance focus.",
     },
 
   ];

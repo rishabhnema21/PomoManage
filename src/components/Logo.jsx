@@ -15,7 +15,7 @@ const Logo = () => {
                 d="M6 3h12M6 21h12M8 3v2.586a2 2 0 0 0 .586 1.414L12 10l3.414-3.414A2 2 0 0 0 16 5.586V3M8 21v-2.586a2 2 0 0 1 .586-1.414L12 14l3.414 3.414A2 2 0 0 1 16 18.414V21"
               />
             </svg>
-            <a className="text-sm md:text-xl z-40 font-bold tracking-tighter" href="#home">
+            <a className="text-sm md:text-xl z-40 font-bold tracking-tighter" href="#">
               pomo
               <span className="bg-gradient-to-t from-sky-500 to-indigo-500 bg-clip-text text-transparent">
                 Manage

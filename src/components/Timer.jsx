@@ -7,7 +7,7 @@ import bell from "../assets/bell.mp3";
 import clock from "../assets/clock.mp3";
 
 const durations = {
-  focus: 25 * 60,
+  // focus: 25 * 60,
   short: 5 * 60,
   long: 30 * 60,
 };
@@ -27,27 +27,9 @@ const Timer = () => {
   const [timeLeft, setTimeLeft] = useState(durations.focus);
   const [focusCount, setFocusCount] = useState(0);
   const [phase, setPhase] = useState("focus");
+  const [focusDuration, setFocusDuration] = useState(25 * 60);
 
-  // localstorage load
-  useEffect(() => {
-    const savedTimeLeft = localStorage.getItem("pomo-timeleft");
-    const savedfocusCount = localStorage.getItem("pomo-focusCount");
-    const savedPhase = localStorage.getItem("pomo-phase");
-    const savedIsRunning = localStorage.getItem("pomo-isRunning");
-
-    if (savedTimeLeft != null) setTimeLeft(Number(savedTimeLeft));
-    if (savedfocusCount != null) setFocusCount(Number(savedfocusCount));
-    if (savedPhase != null) setPhase(savedPhase);
-    if (savedIsRunning != null) setIsRunning(savedIsRunning === "true");
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("pomo-timeleft", timeLeft);
-    localStorage.setItem("pomo-focusCount", focusCount);
-    localStorage.setItem("pomo-phase", phase);
-    localStorage.setItem("pomo-isRunning", isRunning);
-  }, [timeLeft, isRunning, focusCount, phase]);
-
+  // Effect to manage the timer countdown sound
   useEffect(() => {
     if (!isRunning) {
       clockSound.pause();
@@ -55,15 +37,19 @@ const Timer = () => {
     }
 
     clockSound.play();
+
+    // Countdown logic: decrease time every second
     const interval = setInterval(() => {
       setTimeLeft((prevTime) => {
         if (prevTime <= 1) {
-          handlePhaseEnd();
+          handlePhaseEnd(); // Phase ends when time reaches zero
           return 0;
         }
         return prevTime - 1;
       });
     }, 1000);
+
+    // Cleanup the interval on unmount or when isRunning changes
 
     return () => clearInterval(interval);
   }, [isRunning]);
@@ -71,6 +57,8 @@ const Timer = () => {
   const handlePhaseEnd = () => {
     setIsRunning(false);
     bellSound.play();
+
+        // This is the countdown interval (when the timer switches between the durations, it will make a short delay)
 
     setTimeout(() => {
       if (phase === "focus") {
@@ -87,12 +75,15 @@ const Timer = () => {
     }, 1600);
   };
 
+  // switching between phases (focus | short | long)
   const switchPhase = (newPhase) => {
     setPhase(newPhase);
     setIsRunning(true);
-    setTimeLeft(durations[newPhase]);
+    setTimeLeft(newPhase === "focus" ? focusDuration : durations[newPhase]);
   };
 
+
+  // Starts or pauses the timer
   const toggleTimer = () => {
     setIsRunning((prev) => {
       const newIsRunning = !prev;
@@ -102,7 +93,7 @@ const Timer = () => {
       } else clockSound.pause();
 
       return newIsRunning;
-    })
+    });
   };
 
   const resetTimer = () => {
@@ -110,12 +101,7 @@ const Timer = () => {
     clockSound.pause();
     setFocusCount(0);
     setPhase("focus");
-    setTimeLeft(durations.focus);
-
-    localStorage.removeItem("pomo-timeleft");
-    localStorage.removeItem("pomo-isRunning");
-    localStorage.removeItem("pomo-focusCount");
-    localStorage.removeItem("pomo-phase");
+    setTimeLeft(focusDuration);
   };
 
   const handleSkip = () => {
@@ -134,6 +120,7 @@ const Timer = () => {
     }
   };
 
+    // Convert timeLeft into MM:SS format
   const minutes = String(Math.floor(timeLeft / 60)).padStart(2, "0");
   const seconds = String(timeLeft % 60).padStart(2, "0");
 
@@ -166,6 +153,27 @@ const Timer = () => {
         >
           <IoPlayForwardSharp />
         </button>
+      </div>
+
+      <div className="my-4">
+        <label className="text-slate-300 mr-2" htmlFor="">
+          Focus Duration:{" "}
+        </label>
+        <select
+          value={focusDuration}
+          onChange={(e) => {
+            const newDuration = Number(e.target.value);
+            setFocusDuration(newDuration);
+            if (phase === "focus") {
+              setTimeLeft(newDuration);
+            }
+          }}
+          className="text-[#02022d] font-semibold bg-gradient-to-br from-sky-400 to-green-800  outline-none px-1 py-1 rounded"
+        >
+          <option value={25 * 60}>25 min</option>
+          <option value={45 * 60}>45 min</option>
+          <option value={55 * 60}>55 min</option>
+        </select>
       </div>
     </div>
   );
