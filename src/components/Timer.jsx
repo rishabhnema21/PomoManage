@@ -7,7 +7,6 @@ import bell from "../assets/bell.mp3";
 import clock from "../assets/clock.mp3";
 
 const durations = {
-  // focus: 25 * 60,
   short: 5 * 60,
   long: 30 * 60,
 };
@@ -24,10 +23,11 @@ const bellSound = new Howl({
 
 const Timer = () => {
   const [isRunning, setIsRunning] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(durations.focus);
+  const [focusDuration, setFocusDuration] = useState(25 * 60);
+  const [timeLeft, setTimeLeft] = useState(focusDuration);
   const [focusCount, setFocusCount] = useState(0);
   const [phase, setPhase] = useState("focus");
-  const [focusDuration, setFocusDuration] = useState(25 * 60);
+  
 
   // Effect to manage the timer countdown sound
   useEffect(() => {
